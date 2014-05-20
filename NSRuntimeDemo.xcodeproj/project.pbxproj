@@ -19,6 +19,8 @@
 		D02A2C41192A0A9000EB95EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02A2C29192A0A9000EB95EA /* UIKit.framework */; };
 		D02A2C49192A0A9000EB95EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D02A2C47192A0A9000EB95EA /* InfoPlist.strings */; };
 		D02A2C4B192A0A9000EB95EA /* NSRuntimeDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D02A2C4A192A0A9000EB95EA /* NSRuntimeDemoTests.m */; };
+		D02A2C56192A0AAA00EB95EA /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = D02A2C55192A0AAA00EB95EA /* Human.m */; };
+		D02A2C59192AF89400EB95EA /* NSArray+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = D02A2C58192AF89400EB95EA /* NSArray+Swizzle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		D02A2C46192A0A9000EB95EA /* NSRuntimeDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSRuntimeDemoTests-Info.plist"; sourceTree = "<group>"; };
 		D02A2C48192A0A9000EB95EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D02A2C4A192A0A9000EB95EA /* NSRuntimeDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSRuntimeDemoTests.m; sourceTree = "<group>"; };
+		D02A2C54192A0AAA00EB95EA /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
+		D02A2C55192A0AAA00EB95EA /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Human.m; sourceTree = "<group>"; };
+		D02A2C57192AF89400EB95EA /* NSArray+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Swizzle.h"; sourceTree = "<group>"; };
+		D02A2C58192AF89400EB95EA /* NSArray+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Swizzle.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,10 @@
 			children = (
 				D02A2C34192A0A9000EB95EA /* AppDelegate.h */,
 				D02A2C35192A0A9000EB95EA /* AppDelegate.m */,
+				D02A2C54192A0AAA00EB95EA /* Human.h */,
+				D02A2C55192A0AAA00EB95EA /* Human.m */,
+				D02A2C57192AF89400EB95EA /* NSArray+Swizzle.h */,
+				D02A2C58192AF89400EB95EA /* NSArray+Swizzle.m */,
 				D02A2C37192A0A9000EB95EA /* Images.xcassets */,
 				D02A2C2C192A0A9000EB95EA /* Supporting Files */,
 			);
@@ -239,8 +249,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02A2C56192A0AAA00EB95EA /* Human.m in Sources */,
 				D02A2C36192A0A9000EB95EA /* AppDelegate.m in Sources */,
 				D02A2C32192A0A9000EB95EA /* main.m in Sources */,
+				D02A2C59192AF89400EB95EA /* NSArray+Swizzle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NSRuntimeDemo/NSRuntimeDemo-Prefix.pch";
 				INFOPLIST_FILE = "NSRuntimeDemo/NSRuntimeDemo-Info.plist";
@@ -372,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NSRuntimeDemo/NSRuntimeDemo-Prefix.pch";
 				INFOPLIST_FILE = "NSRuntimeDemo/NSRuntimeDemo-Info.plist";

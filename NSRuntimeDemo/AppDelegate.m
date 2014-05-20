@@ -7,6 +7,28 @@
 //
 
 #import "AppDelegate.h"
+#import "Human.h"
+#import <objc/runtime.h>
+#import "NSArray+Swizzle.h"
+
+@interface Man  : NSObject
+
++ (void)say;
+- (void)say;
+
+@end
+
+@implementation Man
+
++ (void)say
+{}
+
+- (void)say
+{
+    NSLog(@"manmanman");
+}
+
+@end
 
 @implementation AppDelegate
 
@@ -14,6 +36,38 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+//    SEL func = NSSelectorFromString(@"say");
+//    Human *human = [Human new];
+//    Man *man = [Man new];
+//    /*
+//    Class c = NSClassFromString(@"Human");
+//    [[[c alloc] init] say];
+//    
+//    
+//    Class b = NSClassFromString(@"Man");
+//    
+//    [[b new] performSelector:func];
+//    [[c new] performSelector:func];
+//     */
+//    
+//    IMP imp1 = [man methodForSelector:func];
+//    IMP imp2 = [human methodForSelector:func];
+//    imp1(human, func);
+//    imp2(man, func);
+//    
+//    //NSLog(@"SEL = %s",func);
+    
+    Method ori_Method = class_getInstanceMethod([NSArray class], @selector(lastObject));
+    Method my_Method = class_getInstanceMethod([NSArray class], @selector(myLastObject));
+    method_exchangeImplementations(ori_Method, my_Method);
+    
+    NSArray *array = @[@"0",@"1",@"2",@"3"];
+    NSString *string = [array lastObject];
+    NSLog(@"Test Result: %@",string);
+    
+    
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
